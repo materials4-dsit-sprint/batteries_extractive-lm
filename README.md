@@ -27,8 +27,9 @@ Models are fine-tuned on either NVIDIA GPUs (CUDA) or Apple Silicon (MPS).
 Metrics: F1, Exact Match (EM), BLEU, ROUGE-L, and BERTScore.
 
 
-Directory Tree
+Project Structure
 
+<pre> 
 ├── data/
 │   └── sample_squad.json       # A small snippet of QA pairs
 ├── scripts/
@@ -37,4 +38,5 @@ Directory Tree
 │   └── benchmark_models.py     # The evaluation script
 ├── results/
 │
-└── README.md                   
+└── README.md      
+</pre>
