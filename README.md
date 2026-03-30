@@ -3,7 +3,7 @@ and fine-tuning domain-specific language models.
 
 ## The pipeline consists of three distinct phases:
 
-### 1. Ingestion & Synthetic Generation
+### 1. Synthetic Generation
 
 Raw PDFs processed using Docling to preserve table structures and chemical formulas in Markdown. We then leverage Claude 4.5 (Anthropic Batch API) to generate 
 high-fidelity QA pairs.
@@ -12,7 +12,7 @@ Input: Research Papers (PDF)
 
 Output: SQuAD 2.0 formatted JSON with is_impossible logic.
 
-### 2. Robust Data Engineering
+### 2. Ingestion & Processing 
 
 To handle 140,000+ samples without memory crashe
 
