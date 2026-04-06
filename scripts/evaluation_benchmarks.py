@@ -210,6 +210,8 @@ def main():
     print("Flattening dataset...")
     full_ds = raw_datasets["train"].map(flatten_squad, batched=True, remove_columns=raw_datasets["train"].column_names)
 
+    #full_ds = load_dataset("rajpurkar/squad")
+    #splits = full_ds["train"].train_test_split(train_size=800, test_size=200, seed=42)
     # --- 80:10:10 SPLIT ---
     train_test_split = full_ds.train_test_split(test_size=0.2, seed=42)
     test_val_split = train_test_split['test'].train_test_split(test_size=0.5, seed=42)
@@ -229,7 +231,7 @@ def main():
     all_trainers = {}
 
     for name, checkpoint in models_to_check.items():
-        print(f"\n🧪 Training: {name}")
+        print(f"Training: {name}")
         tokenizer = AutoTokenizer.from_pretrained(checkpoint)
         model = AutoModelForQuestionAnswering.from_pretrained(checkpoint)
         
@@ -280,5 +282,3 @@ if __name__ == "__main__":
 
 
 
-full_ds = load_dataset("rajpurkar/squad")
-splits = full_ds["train"].train_test_split(train_size=800, test_size=200, seed=42)
