@@ -178,7 +178,7 @@ def phase1_submit():
     state    = {"batch_id": None, "id_map": {}}
     requests = []
     all_pdfs = sorted([f for f in os.listdir(dir_path) if f.lower().endswith(".pdf")])
-    print(f"🚀 Converting {len(all_pdfs)} PDFs...\n")
+    print(f"Converting {len(all_pdfs)} PDFs...\n")
 
     for i, filename in enumerate(all_pdfs, 1):
         # Sanitise filename into a valid custom_id (alphanum + _ -)
